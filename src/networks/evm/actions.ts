@@ -47,13 +47,46 @@ import type {
   NetworkID
 } from '@/types';
 
+const evmTrevorSepolia: EvmNetworkConfig = {
+  eip712ChainId: 689388,
+  proxyFactory: '0xf02371881B929D29431784C2Da32e97D8eb662d2',
+  masterSpace: '0xB8b7A8c5C4ec86cF542b294246B7392Af9E9723c',
+  executionStrategiesImplementations: {
+    SimpleQuorumAvatar: '0x3AA23152B35C267593A468153Bc68694f90A5B42',
+    SimpleQuorumTimelock: '0x17260cB33871Be979BFcBb2F607b48F81e49DD96'
+  },
+  authenticators: {
+    '0xD4011059fE8FbAD39797126DdE6d9Cc08c52599D': {
+      type: 'ethSig'
+    },
+    '0x7DB275BDC27407cB3756d0cdFbA145c2C5692558': {
+      type: 'ethTx'
+    }
+  },
+  strategies: {
+    'VanillaVotingStrategy': {
+      type: 'vanilla'
+    },
+    '0x733f46A568e5D19166f9Fe79F6185038D4B7E807': {
+      type: 'comp'
+    },
+    '0x345Fa0777Dfd4321B385E4D9b5297A4744E93F39': {
+      type: 'ozVotes'
+    },
+    '0xb68724E503475B81b897Ff497d19682778affbd1': {
+      type: 'whitelist'
+    }
+  }
+};
+
 const CONFIGS: Record<number, EvmNetworkConfig> = {
   137: evmPolygon,
   42161: evmArbitrum,
   1: evmMainnet,
   5: evmGoerli,
   11155111: evmSepolia,
-  59140: evmLineaGoerli
+  59140: evmLineaGoerli,
+  689388: evmTrevorSepolia
 };
 
 export function createActions(

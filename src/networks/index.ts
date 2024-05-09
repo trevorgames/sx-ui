@@ -15,12 +15,13 @@ const ethereumNetwork = createEvmNetwork('eth');
 const goerliNetwork = createEvmNetwork('gor');
 const sepoliaNetwork = createEvmNetwork('sep');
 const lineaTestnetNetwork = createEvmNetwork('linea-testnet');
+const tervorTestnetNetwork = createEvmNetwork('trevor-sepolia');
 
 export const enabledNetworks: NetworkID[] = import.meta.env.VITE_ENABLED_NETWORKS
   ? (import.meta.env.VITE_ENABLED_NETWORKS.split(',') as NetworkID[])
-  : ['s', 's-tn', 'eth', 'matic', 'arb1', 'gor', 'sep', 'sn', 'sn-sep'];
+  : ['trevor-sepolia', 's', 's-tn', 'eth', 'matic', 'arb1', 'gor', 'sep', 'sn', 'sn-sep'];
 
-export const evmNetworks: NetworkID[] = ['eth', 'matic', 'arb1', 'gor', 'sep', 'linea-testnet'];
+export const evmNetworks: NetworkID[] = ['eth', 'matic', 'arb1', 'gor', 'sep', 'linea-testnet', 'trevor-sepolia'];
 export const offchainNetworks: NetworkID[] = ['s', 's-tn'];
 
 export const getNetwork = (id: NetworkID) => {
@@ -37,6 +38,7 @@ export const getNetwork = (id: NetworkID) => {
   if (id === 'sn') return starknetNetwork;
   if (id === 'sn-tn') return starknetTestnetNetwork;
   if (id === 'sn-sep') return starknetSepoliaNetwork;
+  if (id === 'trevor-sepolia') return tervorTestnetNetwork;
 
   throw new Error(`Unknown network ${id}`);
 };

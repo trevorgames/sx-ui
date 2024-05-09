@@ -14,7 +14,8 @@ export type NetworkID =
   | 'sn-tn'
   | 'sn-sep'
   | 'matic'
-  | 'arb1';
+  | 'arb1'
+  | 'trevor-sepolia';
 
 export type Choice = 'for' | 'against' | 'abstain';
 

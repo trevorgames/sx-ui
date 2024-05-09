@@ -65,6 +65,13 @@ export const METADATA: Record<string, Metadata> = {
     apiUrl: 'https://thegraph.goerli.zkevm.consensys.net/subgraphs/name/snapshot-labs/sx-subgraph',
     avatar: 'ipfs://bafkreibn4mjs54bnmvkrkiaiwp47gvcz6bervg2kr5ubknytfyz6l5wbs4',
     blockTime: 13.52926
+  },
+  'trevor-sepolia': {
+    name: 'Trevor Sepolia',
+    chainId: 689388,
+    apiUrl: 'https://thegraph.trevorgames.xyz/subgraphs/name/snapshot-labs/sx-subgraph',
+    avatar: 'https://www.trevorgames.xyz/_astro/logo.Bt80k8oJ_gVGqo.svg',
+    blockTime: 6
   }
 };
 
